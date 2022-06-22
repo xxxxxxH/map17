@@ -1,6 +1,8 @@
 package qiu.li.gao.utils
 
 import android.text.TextUtils
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mapbox.geojson.Point
@@ -74,11 +76,15 @@ fun formatData(data: String):Pair<ArrayList<DataEntity>,ArrayList<String>> {
 }
 
 fun formatImageUrl(key: String): String {
-    return "https://geo0.ggpht.com/cbk?output=thumbnail&thumb=2&panoid=" + if (TextUtils.isEmpty(key)) "LiAWseC5n46JieDt9Dkevw" else key
+    return "https://geo0.ggpht.com/cbk?output=thumbnail&thumb=2&panoid=$key"
 }
 
 fun formatText(key :String):String{
     return if (TextUtils.isEmpty(key)) "" else key
+}
+
+fun AppCompatActivity.showToast(s:String){
+    Toast.makeText(this,s,Toast.LENGTH_SHORT).show()
 }
 
 //https://github.com/ve3344/binding-adapter

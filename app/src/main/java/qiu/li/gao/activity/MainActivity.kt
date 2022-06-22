@@ -73,6 +73,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         _binding.streetview.setOnClickListener {
             startActivity(Intent(this, StreetviewActivity::class.java))
         }
+        _binding.inter.setOnClickListener {
+            startActivity(Intent(this, InteractiveActivity::class.java))
+        }
     }
 
     override fun onDestroy() {

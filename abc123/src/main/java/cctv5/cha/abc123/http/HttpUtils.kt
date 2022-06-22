@@ -65,3 +65,23 @@ fun AppCompatActivity.getConfig(block: (ResultBean) -> Unit) {
 
         })
 }
+
+fun AppCompatActivity.getData(url: String,s:(String)->Unit, f:()->Unit){
+    HttpTools.with(this).fromUrl(url)
+        .ofTypeGet().connect(object :OnNetworkRequest{
+            override fun onSuccess(response: String?) {
+               response?.let {
+                   s(it)
+               }
+            }
+
+            override fun onFailure(
+                responseCode: Int,
+                responseMessage: String,
+                errorStream: String
+            ) {
+                f()
+            }
+
+        })
+}
