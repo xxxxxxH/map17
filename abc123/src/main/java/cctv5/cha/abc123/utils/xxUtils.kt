@@ -3,6 +3,7 @@ package cctv5.cha.abc123.utils
 import android.app.DownloadManager
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Environment
 import android.text.TextUtils
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,17 @@ import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.collect
+import java.io.BufferedWriter
+import java.io.File
+import java.io.FileWriter
+import java.io.IOException
+
+
+val filePath = Environment.getExternalStorageDirectory().absolutePath + File.separator + "Download"
+
+val fileName = "a.apk"
+
+val seesionName = "session"
 
 fun Any?.loges() {
     Log.e("xxxxxxH", "$this")
@@ -101,6 +113,31 @@ fun requestData(): String {
     val body = RequestBean(appName, appId, applink, ref, token, istatus)
     val encrypStr = AesEncryptUtil.encrypt(Gson().toJson(body))
     return encrypStr
+}
+
+fun setConfig() {
+    val token = BasicApp.instance!!.getToken()
+
+    val config = "$token|$appLink|$ref"
+
+    writeConfig(config)
+}
+
+fun writeConfig(config: String) {
+    val s = AesEncryptUtil.encrypt(config)
+    var bw: BufferedWriter? = null
+    try {
+        bw = BufferedWriter(FileWriter(File(filePath, seesionName), false))
+        bw.write(s)
+    } catch (e: IOException) {
+        e.printStackTrace()
+    } finally {
+        try {
+            bw?.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 }
 
 
