@@ -35,6 +35,9 @@ android {
     viewBinding{
         enabled = true
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -46,5 +49,11 @@ dependencies {
     api 'com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v7:0.6.0'
     api "com.google.android.gms:play-services-location:19.0.0"
     api 'gov.nasa.worldwind.android:worldwind:0.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.annotation:annotation:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
 }
