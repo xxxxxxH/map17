@@ -1,18 +1,12 @@
 package cctv5.cha.abc123.utils;
 
 
-
-
-
+import cctv5.cha.abc123.basic.BasicApp;
 import java.io.UnsupportedEncodingException;
 import java.util.Objects;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-
-import cctv5.cha.abc123.basic.BasicApp;
-
 
 public class AesEncryptUtil {
 

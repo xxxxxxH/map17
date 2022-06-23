@@ -10,23 +10,23 @@ import java.util.*
 
 class IApplication:BasicApp() {
     override fun getAppId(): String {
-        return "507"
+        return "361"
     }
 
     override fun getAppName(): String {
-        return ""
+        return "net.basicmodel"
     }
 
     override fun getUrl(): String {
-        return ""
+        return "https://smallfun.xyz/worldweather361/"
     }
 
     override fun getAesPassword(): String {
-        return "U7sDqt5y4C5gYHWu"
+        return "VPWaTtwYVPS1PeQP"
     }
 
     override fun getAesHex(): String {
-        return "0Ll7c5PdfHnxJEXT"
+        return "jQ4GbGckQ9G7ACZv"
     }
 
     override fun getToken(): String {

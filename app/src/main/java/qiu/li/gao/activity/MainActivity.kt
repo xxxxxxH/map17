@@ -2,6 +2,7 @@ package qiu.li.gao.activity
 
 import android.content.Intent
 import androidx.core.view.GravityCompat
+import cctv5.cha.abc123.utils.xxTools
 import com.mapbox.android.gestures.MoveGestureDetector
 import com.mapbox.maps.CameraOptions
 import com.mapbox.maps.Style
@@ -38,7 +39,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
     override fun initialization() {
-//        xxTools.get().xxCheck(this)
+        xxTools.get().xxCheck(this)
         EventBus.getDefault().register(this)
         _binding.mapView.getMapboxMap().setCamera(
             CameraOptions.Builder()
@@ -72,9 +73,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
         _binding.streetview.setOnClickListener {
             startActivity(Intent(this, StreetviewActivity::class.java))
+            _binding.drawerLayout.closeDrawer(GravityCompat.START)
         }
         _binding.inter.setOnClickListener {
             startActivity(Intent(this, InteractiveActivity::class.java))
+            _binding.drawerLayout.closeDrawer(GravityCompat.START)
+        }
+        _binding.router.setOnClickListener {
+            startActivity(Intent(this, RouterActivity::class.java))
+            _binding.drawerLayout.closeDrawer(GravityCompat.START)
+        }
+        _binding.near.setOnClickListener {
+            startActivity(Intent(this, NearbyActivity::class.java))
+            _binding.drawerLayout.closeDrawer(GravityCompat.START)
         }
     }
 
