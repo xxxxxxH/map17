@@ -9,18 +9,20 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textColor="#000"
-        android:gravity="center"/>
-
-    <TextView
-        android:id="@+id/current"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:textColor="#000"
         android:gravity="center"/>
 
     <ProgressBar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="70dp"/>
+
+    <TextView
+        android:id="@+id/current"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
 </LinearLayout>

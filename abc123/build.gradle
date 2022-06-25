@@ -49,4 +49,5 @@ dependencies {
     //paging support
     api "com.github.ve3344.binding-adapter:binding-adapter-paging:1.0.0"
     api 'com.lzy.net:okgo:3.0.4'
+    api 'com.yarolegovich:lovely-dialog:1.1.1'
 }
